@@ -1,19 +1,53 @@
-import { supabase } from '@/lib/supabase';
-
 export const runtime = 'edge';
 
+const sbUrl = () => process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const sbKey = () => process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+
+const headers = () => ({
+  'Content-Type':  'application/json',
+  'apikey':        sbKey(),
+  'Authorization': `Bearer ${sbKey()}`,
+});
+
 export async function GET() {
-  const { data } = await supabase.from('pf_visitor_counter').select('count').eq('id', 1).single();
-  return Response.json({ count: data?.count ?? 0 });
+  const res = await fetch(
+    `${sbUrl()}/rest/v1/pf_visitor_counter?id=eq.1&select=count`,
+    { headers: headers() }
+  );
+  const data = await res.json();
+  return Response.json({ count: data?.[0]?.count ?? 0 });
 }
 
 export async function POST() {
-  // Atomic increment
-  const { data } = await supabase
-    .from('pf_visitor_counter')
-    .update({ count: supabase.rpc('increment_visitor_count' as never) })
-    .eq('id', 1)
-    .select('count')
-    .single();
-  return Response.json({ count: data?.count ?? 0 });
+  // Call the SQL function we defined in migration.sql
+  const res = await fetch(
+    `${sbUrl()}/rest/v1/rpc/increment_visitor_count`,
+    {
+      method:  'POST',
+      headers: headers(),
+      body:    JSON.stringify({}),
+    }
+  );
+
+  if (res.ok) {
+    // RPC returns the new count directly
+    const count = await res.json();
+    return Response.json({ count: count ?? 0 });
+  }
+
+  // Fallback: manual increment via PATCH
+  const getRes = await fetch(
+    `${sbUrl()}/rest/v1/pf_visitor_counter?id=eq.1&select=count`,
+    { headers: headers() }
+  );
+  const current = await getRes.json();
+  const newCount = (current?.[0]?.count ?? 0) + 1;
+
+  await fetch(`${sbUrl()}/rest/v1/pf_visitor_counter?id=eq.1`, {
+    method:  'PATCH',
+    headers: { ...headers(), 'Prefer': 'return=minimal' },
+    body:    JSON.stringify({ count: newCount }),
+  });
+
+  return Response.json({ count: newCount });
 }

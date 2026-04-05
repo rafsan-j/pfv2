@@ -5,22 +5,27 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        void:    '#050505',
-        surface: '#0d0d12',
-        panel:   '#111118',
-        border:  '#1a1a2e',
-        neon:    '#00ff88',
-        cyan:    '#00d4ff',
-        amber:   '#ffb400',
-        muted:   '#4a4a6a',
-        dim:     '#2a2a3e',
-        ghost:   '#8888aa',
-        snow:    '#e8e8f0',
+        // IMPORTANT: Do NOT use names that clash with Tailwind built-ins.
+        // 'border' and 'surface' were renamed below.
+        void:      '#050505',
+        surface:   '#0d0d12',   // used as bg-surface  (safe — not a built-in)
+        'panel-c': '#111118',   // was 'panel' — renamed to avoid confusion
+        'border-c':'#1a1a2e',   // was 'border' — Tailwind uses 'border' internally
+        neon:      '#00ff88',
+        cyan:      '#00d4ff',
+        amber:     '#ffb400',
+        muted:     '#4a4a6a',
+        dim:       '#2a2a3e',
+        ghost:     '#8888aa',
+        snow:      '#e8e8f0',
       },
       fontFamily: {
-        mono:    ['var(--font-mono)', 'JetBrains Mono', 'monospace'],
-        display: ['var(--font-display)', 'Orbitron', 'monospace'],
-        sans:    ['var(--font-sans)', 'Space Grotesk', 'sans-serif'],
+        // 'display' is a valid CSS font-display property, but as a Tailwind
+        // font utility it's fine because Tailwind prefixes it: font-display
+        mono:    ['JetBrains Mono', 'monospace'],
+        display: ['Orbitron', 'monospace'],
+        sans:    ['Space Grotesk', 'sans-serif'],
+        serif:   ['Playfair Display', 'Georgia', 'serif'],
       },
       animation: {
         'pulse-neon':   'pulseNeon 2s ease-in-out infinite',

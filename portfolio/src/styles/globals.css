@@ -1,3 +1,4 @@
+/* ── ALL @import MUST be at the very top before anything else ── */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;600;700;900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,400&display=swap');
 
 @tailwind base;
@@ -23,15 +24,15 @@
   --ghost:     #8888aa;
   --snow:      #e8e8f0;
 
-  /* Semantic aliases (used by all shared components) */
-  --c-bg:      var(--bg);
-  --c-surface: var(--surface);
-  --c-panel:   var(--panel-bg);
-  --c-border:  var(--border-c);
-  --c-accent:  var(--neon);
-  --c-text:    var(--snow);
-  --c-muted:   var(--ghost);
-  --c-tag-bg:  rgba(0,255,136,0.06);
+  /* Semantic aliases */
+  --c-bg:         var(--bg);
+  --c-surface:    var(--surface);
+  --c-panel:      var(--panel-bg);
+  --c-border:     var(--border-c);
+  --c-accent:     var(--neon);
+  --c-text:       var(--snow);
+  --c-muted:      var(--ghost);
+  --c-tag-bg:     rgba(0,255,136,0.06);
   --c-tag-border: rgba(0,255,136,0.35);
   --c-tag-text:   var(--neon);
   --c-btn-border: var(--neon);
@@ -42,16 +43,16 @@
   --font-head:    var(--font-display);
 }
 
-/* ── Recruiter mode — light, serif, corporate ──────────────── */
+/* ── Recruiter mode ────────────────────────────────────────── */
 [data-mode="recruiter"] {
-  --c-bg:      #ffffff;
-  --c-surface: #f8f8f8;
-  --c-panel:   #ffffff;
-  --c-border:  #e2e2e2;
-  --c-accent:  #111111;
-  --c-text:    #111111;
-  --c-muted:   #666666;
-  --c-tag-bg:  #f0f0f0;
+  --c-bg:         #ffffff;
+  --c-surface:    #f8f8f8;
+  --c-panel:      #ffffff;
+  --c-border:     #e2e2e2;
+  --c-accent:     #111111;
+  --c-text:       #111111;
+  --c-muted:      #666666;
+  --c-tag-bg:     #f0f0f0;
   --c-tag-border: #cccccc;
   --c-tag-text:   #333333;
   --c-btn-border: #111111;
@@ -64,14 +65,14 @@
 
 /* ── Recruiter dark mode ───────────────────────────────────── */
 [data-mode="recruiter"][data-dark="1"] {
-  --c-bg:      #0f0f0f;
-  --c-surface: #1a1a1a;
-  --c-panel:   #1f1f1f;
-  --c-border:  #333333;
-  --c-accent:  #e8e8e8;
-  --c-text:    #e8e8e8;
-  --c-muted:   #999999;
-  --c-tag-bg:  #2a2a2a;
+  --c-bg:         #0f0f0f;
+  --c-surface:    #1a1a1a;
+  --c-panel:      #1f1f1f;
+  --c-border:     #333333;
+  --c-accent:     #e8e8e8;
+  --c-text:       #e8e8e8;
+  --c-muted:      #999999;
+  --c-tag-bg:     #2a2a2a;
   --c-tag-border: #444444;
   --c-tag-text:   #cccccc;
   --c-btn-border: #e8e8e8;
@@ -80,16 +81,16 @@
   --c-btn-active: #0f0f0f;
 }
 
-/* ── Friend mode — pastel, playful, warm ──────────────────── */
+/* ── Friend mode ──────────────────────────────────────────── */
 [data-mode="friend"] {
-  --c-bg:      #fdf4ff;
-  --c-surface: #fff0fb;
-  --c-panel:   #ffffff;
-  --c-border:  #f0c0e8;
-  --c-accent:  #ec4899;
-  --c-text:    #1e1e2e;
-  --c-muted:   #64648a;
-  --c-tag-bg:  rgba(236,72,153,0.08);
+  --c-bg:         #fdf4ff;
+  --c-surface:    #fff0fb;
+  --c-panel:      #ffffff;
+  --c-border:     #f0c0e8;
+  --c-accent:     #ec4899;
+  --c-text:       #1e1e2e;
+  --c-muted:      #64648a;
+  --c-tag-bg:     rgba(236,72,153,0.08);
   --c-tag-border: rgba(236,72,153,0.3);
   --c-tag-text:   #ec4899;
   --c-btn-border: #ec4899;
@@ -102,14 +103,14 @@
 
 /* ── Friend dark mode ─────────────────────────────────────── */
 [data-mode="friend"][data-dark="1"] {
-  --c-bg:      #12071a;
-  --c-surface: #1a0d24;
-  --c-panel:   #1f1030;
-  --c-border:  #3d1f50;
-  --c-accent:  #f472b6;
-  --c-text:    #f0d0ff;
-  --c-muted:   #a070c0;
-  --c-tag-bg:  rgba(244,114,182,0.1);
+  --c-bg:         #12071a;
+  --c-surface:    #1a0d24;
+  --c-panel:      #1f1030;
+  --c-border:     #3d1f50;
+  --c-accent:     #f472b6;
+  --c-text:       #f0d0ff;
+  --c-muted:      #a070c0;
+  --c-tag-bg:     rgba(244,114,182,0.1);
   --c-tag-border: rgba(244,114,182,0.35);
   --c-tag-text:   #f472b6;
   --c-btn-border: #f472b6;
@@ -141,7 +142,7 @@ body {
 
 ::selection { background: rgba(0,255,136,0.2); color: #00ff88; }
 [data-mode="recruiter"] ::selection { background: rgba(0,0,0,0.1); color: #111; }
-[data-mode="friend"] ::selection    { background: rgba(236,72,153,0.2); color: #ec4899; }
+[data-mode="friend"]    ::selection { background: rgba(236,72,153,0.2); color: #ec4899; }
 
 /* ── Scrollbar ─────────────────────────────────────────────── */
 ::-webkit-scrollbar       { width: 4px; height: 4px; }
@@ -149,7 +150,16 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--c-border); border-radius: 2px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--c-accent); }
 
-/* ── Text effects ──────────────────────────────────────────── */
+/* ── Font utilities — use these class names, NOT font-display ─ */
+.font-orbitron  { font-family: var(--font-display) !important; }
+.font-mono-rj   { font-family: var(--font-mono)    !important; }
+.font-grotesk   { font-family: var(--font-sans)    !important; }
+.font-playfair  { font-family: var(--font-serif)   !important; }
+
+/* Theme-aware heading font (used by .font-display Tailwind class) */
+.font-display { font-family: var(--font-head); }
+
+/* ── Neon glow text ────────────────────────────────────────── */
 .text-neon-glow {
   color: var(--neon);
   text-shadow: 0 0 7px rgba(0,255,136,.8), 0 0 14px rgba(0,255,136,.4);
@@ -165,23 +175,23 @@ body {
 .glitch::after  { color: #ff0055;     animation: glitch-b .3s infinite linear alternate-reverse; }
 @keyframes glitch-a {
   0%   { clip-path: polygon(0 0,100% 0,100% 33%,0 33%);       transform: translateX(-2px); }
-  50%  { clip-path: polygon(0 65%,100% 65%,100% 100%,0 100%); transform: translateX(2px); }
+  50%  { clip-path: polygon(0 65%,100% 65%,100% 100%,0 100%); transform: translateX(2px);  }
   100% { clip-path: polygon(0 20%,100% 20%,100% 55%,0 55%);   transform: translateX(-1px); }
 }
 @keyframes glitch-b {
-  0%   { clip-path: polygon(0 60%,100% 60%,100% 100%,0 100%); transform: translateX(2px); }
+  0%   { clip-path: polygon(0 60%,100% 60%,100% 100%,0 100%); transform: translateX(2px);  }
   50%  { clip-path: polygon(0 0,100% 0,100% 40%,0 40%);       transform: translateX(-2px); }
-  100% { clip-path: polygon(0 20%,100% 20%,100% 60%,0 60%);   transform: translateX(1px); }
+  100% { clip-path: polygon(0 20%,100% 20%,100% 60%,0 60%);   transform: translateX(1px);  }
 }
 
 /* ── Panel / card ──────────────────────────────────────────── */
 .panel {
-  background: var(--c-panel);
-  border: 1px solid var(--c-border);
+  background:    var(--c-panel);
+  border:        1px solid var(--c-border);
   border-radius: 8px;
-  position: relative;
-  overflow: hidden;
-  transition: background 0.3s, border-color 0.3s;
+  position:      relative;
+  overflow:      hidden;
+  transition:    background 0.3s, border-color 0.3s;
 }
 .panel::before {
   content: ''; position: absolute; inset: 0; pointer-events: none;
@@ -193,7 +203,7 @@ body {
 .panel-accent::after {
   content: ''; position: absolute; top: 0; left: 0;
   width: 20px; height: 20px;
-  border-top: 1px solid var(--c-accent);
+  border-top:  1px solid var(--c-accent);
   border-left: 1px solid var(--c-accent);
   pointer-events: none; opacity: .5;
 }
@@ -201,49 +211,71 @@ body {
 
 /* ── Tag ───────────────────────────────────────────────────── */
 .tag {
-  font-family: var(--font-mono); font-size: .65rem;
-  padding: 2px 8px; border-radius: 2px; border: 1px solid;
-  letter-spacing: .07em; text-transform: uppercase;
-  display: inline-block; cursor: pointer;
-  transition: all 0.2s;
+  font-family:     var(--font-mono);
+  font-size:       .65rem;
+  padding:         2px 8px;
+  border-radius:   2px;
+  border:          1px solid;
+  letter-spacing:  .07em;
+  text-transform:  uppercase;
+  display:         inline-block;
+  cursor:          pointer;
+  transition:      all 0.2s;
 }
 [data-mode="recruiter"] .tag { border-radius: 0; letter-spacing: .1em; font-family: var(--font-sans); }
-[data-mode="friend"] .tag    { border-radius: 20px; font-family: var(--font-sans); }
+[data-mode="friend"]    .tag { border-radius: 20px; font-family: var(--font-sans); }
 
 .tag-neon  { border-color: var(--c-tag-border); color: var(--c-tag-text); background: var(--c-tag-bg); }
 .tag-cyan  { border-color: rgba(0,212,255,.4);   color: #00d4ff; background: rgba(0,212,255,.06); }
 .tag-amber { border-color: rgba(255,180,0,.4);   color: #ffb400; background: rgba(255,180,0,.06); }
-.tag-ghost { border-color: rgba(136,136,170,.2); color: var(--c-muted); background: transparent; }
+.tag-ghost { border-color: rgba(136,136,170,.2); color: var(--c-muted); background: transparent;  }
 
 /* ── Neon button ───────────────────────────────────────────── */
 .btn-neon {
-  font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em;
-  text-transform: uppercase; padding: 10px 24px;
-  border: 1px solid var(--c-btn-border); color: var(--c-btn-text);
-  background: transparent; cursor: pointer;
-  position: relative; overflow: hidden; transition: color .25s;
-  display: inline-block; text-decoration: none; text-align: center;
+  font-family:    var(--font-mono);
+  font-size:      .75rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding:        10px 24px;
+  border:         1px solid var(--c-btn-border);
+  color:          var(--c-btn-text);
+  background:     transparent;
+  cursor:         pointer;
+  position:       relative;
+  overflow:       hidden;
+  transition:     color .25s;
+  display:        inline-block;
+  text-decoration: none;
+  text-align:     center;
 }
 .btn-neon::before {
-  content: ''; position: absolute; inset: 0;
-  background: var(--c-btn-fill); transform: scaleX(0);
-  transform-origin: left; transition: transform .25s ease; z-index: 0;
+  content:          '';
+  position:         absolute;
+  inset:            0;
+  background:       var(--c-btn-fill);
+  transform:        scaleX(0);
+  transform-origin: left;
+  transition:       transform .25s ease;
+  z-index:          0;
 }
-.btn-neon:hover { color: var(--c-btn-active); }
-.btn-neon:hover::before { transform: scaleX(1); }
-.btn-neon span { position: relative; z-index: 1; }
-.btn-neon:disabled { opacity: .4; cursor: not-allowed; }
+.btn-neon:hover             { color: var(--c-btn-active); }
+.btn-neon:hover::before     { transform: scaleX(1); }
+.btn-neon span              { position: relative; z-index: 1; }
+.btn-neon:disabled          { opacity: .4; cursor: not-allowed; }
 
-/* recruiter/friend button: pill shape */
 [data-mode="recruiter"] .btn-neon { border-radius: 0; font-family: var(--font-sans); }
-[data-mode="friend"] .btn-neon    { border-radius: 50px; font-family: var(--font-sans); }
+[data-mode="friend"]    .btn-neon { border-radius: 50px; font-family: var(--font-sans); }
 
 /* ── Status dot ────────────────────────────────────────────── */
 .status-dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--neon); box-shadow: 0 0 6px var(--neon);
-  display: inline-block; flex-shrink: 0;
-  animation: pulse-dot 2s ease-in-out infinite;
+  width:        8px;
+  height:       8px;
+  border-radius: 50%;
+  background:   var(--neon);
+  box-shadow:   0 0 6px var(--neon);
+  display:      inline-block;
+  flex-shrink:  0;
+  animation:    pulse-dot 2s ease-in-out infinite;
 }
 @keyframes pulse-dot {
   0%,100% { box-shadow: 0 0 4px var(--neon); }
@@ -252,20 +284,28 @@ body {
 
 /* ── Terminal cursor ───────────────────────────────────────── */
 .cursor::after {
-  content: '█'; animation: blink 1s step-end infinite;
-  color: var(--c-accent); margin-left: 1px;
+  content:     '█';
+  animation:   blink 1s step-end infinite;
+  color:       var(--c-accent);
+  margin-left: 1px;
 }
 @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
 
 /* ── Link underline ────────────────────────────────────────── */
 .link-underline { position: relative; }
 .link-underline::after {
-  content: ''; position: absolute; bottom: -1px; left: 0; right: 100%;
-  height: 1px; background: var(--c-accent); transition: right .3s ease;
+  content:    '';
+  position:   absolute;
+  bottom:     -1px;
+  left:       0;
+  right:      100%;
+  height:     1px;
+  background: var(--c-accent);
+  transition: right .3s ease;
 }
 .link-underline:hover::after { right: 0; }
 
-/* ── Grid bg (dev mode) ────────────────────────────────────── */
+/* ── Grid bg ───────────────────────────────────────────────── */
 .bg-grid {
   background-image:
     linear-gradient(rgba(0,255,136,.03) 1px, transparent 1px),
@@ -273,49 +313,71 @@ body {
   background-size: 40px 40px;
 }
 
+/* ── Shadow neon ───────────────────────────────────────────── */
+.shadow-neon { box-shadow: 0 0 10px rgba(0,255,136,0.4), 0 0 20px rgba(0,255,136,0.2); }
+
 /* ── MDX content ───────────────────────────────────────────── */
-.mdx-content h1,.mdx-content h2,.mdx-content h3 {
-  font-family: var(--font-head); color: var(--c-text); margin: 1.5em 0 .5em;
-}
+.mdx-content h1,
+.mdx-content h2,
+.mdx-content h3  { font-family: var(--font-head); color: var(--c-text); margin: 1.5em 0 .5em; }
 .mdx-content p   { color: var(--c-muted); line-height: 1.8; margin-bottom: 1em; }
 .mdx-content a   { color: var(--c-accent); }
 .mdx-content code {
-  font-family: var(--font-mono); font-size: .85em;
-  color: var(--cyan); background: var(--c-surface);
-  padding: 2px 6px; border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size:   .85em;
+  color:       var(--cyan);
+  background:  var(--c-surface);
+  padding:     2px 6px;
+  border-radius: 3px;
 }
-.mdx-content pre { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 6px; padding: 1rem; overflow-x: auto; margin: 1.5em 0; }
-.mdx-content blockquote { border-left: 2px solid var(--c-accent); padding-left: 1rem; color: var(--c-muted); font-style: italic; margin: 1.5em 0; }
-
-/* ── Responsive utilities ──────────────────────────────────── */
-@media (max-width: 768px) {
-  .font-display { letter-spacing: 0.05em; }
+.mdx-content pre {
+  background:    var(--c-surface);
+  border:        1px solid var(--c-border);
+  border-radius: 6px;
+  padding:       1rem;
+  overflow-x:    auto;
+  margin:        1.5em 0;
+}
+.mdx-content blockquote {
+  border-left: 2px solid var(--c-accent);
+  padding-left: 1rem;
+  color:        var(--c-muted);
+  font-style:   italic;
+  margin:       1.5em 0;
 }
 
-/* ── Playfair Display for recruiter mode ─────────── */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+/* ── Homepage layout fixes ─────────────────────────────────── */
 
-/* ── Responsive base ─────────────────────────────── */
-@media (max-width: 640px) {
-  .font-display { letter-spacing: 0.05em; }
-  .btn-neon { padding: 8px 18px; font-size: .7rem; }
-  .tag { font-size: .6rem; padding: 2px 6px; }
+/* Mode switcher: sits above everything, centered at top */
+.mode-switcher {
+  position:   fixed;
+  top:        12px;
+  left:       50%;
+  transform:  translateX(-50%);
+  z-index:    400;
 }
 
-/* ── Theme-aware AI assistant ────────────────────── */
-[data-mode="recruiter"] .ai-assistant-panel {
-  background: var(--recruiter-card, #f9f9f9);
-  border-color: #e5e5e5;
-  color: #111;
+/* Dark mode toggle: top-right, same row as mode switcher */
+.dark-toggle {
+  position: fixed;
+  top:      12px;
+  right:    16px;
+  z-index:  400;
 }
+
+/* On homepage (no NavBar), developer page needs top padding for switcher */
+.homepage-dev-main {
+  padding-top: 4rem; /* 64px — clears the mode switcher pill */
+}
+
+/* ── AI assistant theme overrides ──────────────────────────── */
 [data-mode="recruiter"] .ai-msg-assistant { background: #f0f0f0; color: #333; border-color: #ddd; }
 [data-mode="recruiter"] .ai-msg-user      { background: #111;    color: #fff; border-color: #111; }
-[data-mode="recruiter"] .ai-input         { background: #f9f9f9; border-color: #ddd; color: #111; }
+[data-mode="friend"]    .ai-msg-assistant { background: #2d1f4a; color: #e2d9f3; border-color: #3d2a5a; }
+[data-mode="friend"]    .ai-msg-user      { background: rgba(244,114,182,0.12); color: #e2d9f3; border-color: rgba(244,114,182,0.4); }
 
-[data-mode="friend"] .ai-assistant-panel {
-  background: #1a0f2e;
-  border-color: #f472b660;
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .btn-neon { padding: 8px 18px; font-size: .7rem; }
+  .tag      { font-size: .6rem; padding: 2px 6px; }
 }
-[data-mode="friend"] .ai-msg-assistant { background: #2d1f4a; color: #e2d9f3; border-color: #3d2a5a; }
-[data-mode="friend"] .ai-msg-user      { background: linear-gradient(135deg, #f472b620, #a78bfa20); color: #e2d9f3; border-color: #f472b640; }
-[data-mode="friend"] .ai-input         { background: #2d1f4a; border-color: #3d2a5a; color: #e2d9f3; }

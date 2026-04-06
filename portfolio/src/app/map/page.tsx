@@ -1,20 +1,30 @@
-import { Metadata } from 'next';
-import { NavBar }    from '@/components/layout/NavBar';
+import { NavBar }      from '@/components/layout/NavBar';
 import { BDMapClient } from './BDMapClient';
 
-export const metadata: Metadata = { title: 'Coordinates — Bangladesh Map' };
+export const metadata = { title: 'Coordinates | Rafsan Jani' };
 
 export default function MapPage() {
   return (
     <>
       <NavBar />
-      <main className="max-w-6xl mx-auto px-4 pt-24 pb-16">
-        <div className="mb-8">
-          <p className="text-neon text-xs tracking-widest mb-2">// COORDINATES</p>
-          <h1 className="font-display text-4xl md:text-5xl text-snow font-bold mb-3">Bangladesh on the Grid</h1>
-          <p className="text-ghost max-w-xl">Every place that shaped me. Click a location to read the story.</p>
+      <main className="min-h-screen px-4 pt-20 pb-16 max-w-5xl mx-auto" style={{ background: '#050505' }}>
+
+        {/* Header */}
+        <div className="mb-6">
+          <p className="text-xs tracking-widest font-mono mb-1" style={{ color: '#8888aa' }}>
+            // COORDINATES
+          </p>
+          <h1 className="font-display text-3xl font-bold mb-1" style={{ color: '#e8e8f0' }}>
+            Bangladesh
+          </h1>
+          <p className="text-xs font-mono" style={{ color: '#4a4a6a' }}>
+            Places visited · memories made · places to go
+          </p>
         </div>
+
+        {/* Map component */}
         <BDMapClient />
+
       </main>
     </>
   );
